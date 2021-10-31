@@ -8,6 +8,9 @@
   "scripts": {
     "start": "node src/index.js"
   },
+  "engines": {
+    "node": "16.x"
+  },
   "dependencies": {
     "@discordjs/builders": "^0.8.2",
     "chalk": "^4.1.2",
