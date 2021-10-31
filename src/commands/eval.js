@@ -29,7 +29,7 @@ module.exports = {
                fields: [
                   {
                      name: "Type",
-                     value: `\`\`\`prolog\n${jsUcfirst(typeof(evalued))}\`\`\``,
+                     value: `\`\`\`prolog\n${jsUcfirst(typeof(evaluated))}\`\`\``,
                      inline: true
                   },
                   {
