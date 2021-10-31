@@ -8,7 +8,7 @@ module.exports = {
          name: 'target',
          type: 2,
          description: 'Select an user.',
-         required: false
+         required: true
       }
    ],
    run: async (interaction) => {
