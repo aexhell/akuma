@@ -10,11 +10,11 @@
   },
   "engines": {
     "node": "16.x",
-    "npm": "8.1.2"
+    "npm": "*"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/aexhell/akuma.git"
+    "url": "git+https://github.com/aexhell/akuma.git"
   },
   "dependencies": {
     "@discordjs/builders": "^0.8.2",
