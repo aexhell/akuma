@@ -1,8 +1,8 @@
 const { Interaction } = require('discord.js');
 
 module.exports = {
-   name: 'ping',
-   description: 'Pong!',
+   name: 'avatar',
+   description: 'Get an user\'s avatar',
    options: [
       {
          name: 'target',
