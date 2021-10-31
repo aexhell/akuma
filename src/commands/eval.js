@@ -1,4 +1,5 @@
 const chalk = require("chalk");
+const { MessageEmbed } = require("discord.js");
 
 module.exports = {
    name: 'eval',
@@ -23,37 +24,15 @@ module.exports = {
          let code = interaction.options.getString('code');
          try {
             let evaluated = eval(code);
-            let evalEmbed = {
-               title: "Evaluated Item",
-               color: "RANDOM",
-               author: {
-                  name: author.tag,
-                  icon_url: author.displayAvatarURL()
-               },
-               fields: [
-                  {
-                     name: "Type",
-                     value: `\`\`\`prolog\n${jsUcfirst(typeof(evaluated))}\`\`\``,
-                     inline: true
-                  },
-                  {
-                     name: "Evaluated in:",
-                     value: `\`\`\`yaml\n${new Date()-interaction.createdTimestamp} ms.\`\`\``,
-                     inline: true
-                  },
-                  {
-                     name: "Input:",
-                     value: `\`\`\`js\n${code}\`\`\``,
-                     inline: false
-                  },
-                  {
-                     name: "Output:",
-                     value: `\`\`\`fix\n${evaluated}\`\`\``,
-                     inline: false
-                  }
-               ]
-            }
-            interaction.reply({ embed: evalEmbed });
+            let evalEmbed = new MessageEmbed()
+               .setTitle("Evaluated Item")
+               .setColor("RANDOM")
+               .setAuthor(author.tag, author.displayAvatarURL())
+               .addField("Type", `\`\`\`prolog\n${jsUcfirst(typeof(evaluated))}\`\`\``, true)
+               .addField("Evaluated in:", `\`\`\`yaml\n${new Date()-interaction.createdTimestamp} ms.\`\`\``, true)
+               .addField("Input:", `\`\`\`js\n${code}\`\`\``, false)
+               .addField("Output:", `\`\`\`fix\n${evaluated}\`\`\``, false);
+            interaction.reply(evalEmbed);
          } catch(err) {
             interaction.reply(err);
             console.log(chalk`${chalk.red('warn')} ── Failed to execute code in eval\n${err}`);
