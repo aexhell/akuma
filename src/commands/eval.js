@@ -32,11 +32,11 @@ module.exports = {
                .addField("Evaluated in:", `\`\`\`yaml\n${new Date()-interaction.createdTimestamp} ms.\`\`\``, true)
                .addField("Input:", `\`\`\`js\n${code}\`\`\``, false)
                .addField("Output:", `\`\`\`fix\n${evaluated}\`\`\``, false);
+
             await interaction.followUp({
                embeds: [evalEmbed]
             });
          } catch(err) {
-            interaction.reply(err);
             console.log(chalk`${chalk.red('warn')} ── Failed to execute code in eval\n${err}`);
          }
       }
