@@ -6,7 +6,7 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
-    "start": "npm i --save && node src/index.js"
+    "start": "node src/index.js"
   },
   "engines": {
     "node": "16.x",
