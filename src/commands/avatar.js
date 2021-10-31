@@ -1,5 +1,3 @@
-const { Interaction } = require('discord.js');
-
 module.exports = {
    name: 'avatar',
    description: 'Get an user\'s avatar',
@@ -12,8 +10,8 @@ module.exports = {
       }
    ],
    run: async (interaction) => {
-      if (typeof interaction === Interaction) {
-         let target = interaction.options.getUser('target') || interaction.member;
+      if (interaction) {
+         let target = interaction.options.getUser('target');
 
          interaction.reply(`\`${target.user.tag}\`'s avatar: ${target.user.displayAvatarURL({ size: 1024, dynamic: true })}`);
       }
