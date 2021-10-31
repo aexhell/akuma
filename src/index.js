@@ -27,7 +27,8 @@ client.on("interactionCreate", async (interaction) => {
        await command.run(interaction);
    } catch (exception) {
        await interaction.reply(`Sorry, but something went wrong. Please try again later.`);
-       logger.error(exception);
+       console.log(chalk`${chalk.red('warn')} ── Failed to execute ${file}`);
+       console.log(exception);
    }
 });
 
