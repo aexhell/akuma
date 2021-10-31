@@ -33,7 +33,7 @@ module.exports = {
                .addField("Input:", `\`\`\`js\n${code}\`\`\``, false)
                .addField("Output:", `\`\`\`fix\n${evaluated}\`\`\``, false);
 
-            await interaction.followUp({
+            await interaction.reply({
                embeds: [evalEmbed]
             });
          } catch(err) {
