@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const chalk = require('chalk');
+const backend = require("./express");
 const CommandHandler = require('./handler/command.js');
 const commandHandler = new CommandHandler();
 const dotenv = require('dotenv');
@@ -40,3 +41,4 @@ client.on('ready', async () => {
 });
 
 client.login(process.env.DISCORD);
+backend();
