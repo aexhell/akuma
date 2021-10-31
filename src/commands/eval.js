@@ -15,6 +15,10 @@ module.exports = {
       if (interaction) {
          if (interaction.user.id !== '308938789592498176') return interaction.reply("You do not have access to this command.");
          
+         function jsUcfirst(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+         }
+         
          let author = interaction.user;
          let code = interaction.options.getString('code');
          try {
