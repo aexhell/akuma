@@ -1,4 +1,4 @@
-const _ = require('node-fetch');
+const _ = import('node-fetch');
 
 module.exports = {
    name: 'github',
