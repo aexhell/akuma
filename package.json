@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "@discordjs/builders": "^0.8.2",
+    "chalk": "^4.1.2",
+    "discord.js": "^13.3.0",
+    "dotenv": "^10.0.0",
+    "fs": "^0.0.1-security",
+    "node-fetch": "^3.0.0"
+  },
+  "name": "akuma",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "node src/index.js"
+  },
+  "devDependencies": {
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "discord-api-types": "^0.24.0"
+  },
+  "author": "aexhell",
+  "license": "MIT",
+  "description": ""
+}
