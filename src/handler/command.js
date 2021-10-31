@@ -15,7 +15,7 @@ module.exports = class CommandHandler {
 
    async register(command) {
       this.commands.set(command.name, command);
-      this.commandsData.push({ name: command.name, description: command.description });
+      this.commandsData.push({ name: command.name, description: command.description, options: command.options || null });
    }
 
    async load() {
