@@ -6,5 +6,5 @@ module.exports = () => {
       res.send({ status: 200, message: "Nothing here." });
    });
 
-   app.listen(3000);
+   app.listen(process.env.PORT || 7000);
 }
