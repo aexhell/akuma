@@ -53,7 +53,7 @@ module.exports = {
                   }
                ]
             }
-            message.channel.send({ embed: evalEmbed });
+            interaction.reply({ embed: evalEmbed });
          } catch(err) {
             interaction.reply(err);
             console.log(chalk`${chalk.red('warn')} ── Failed to execute code in eval\n${err}`);
