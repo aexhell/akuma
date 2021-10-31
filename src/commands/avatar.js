@@ -12,9 +12,8 @@ module.exports = {
    run: async (interaction) => {
       if (interaction) {
          let target = interaction.options.getUser('target');
-         console.log(target);
 
-         interaction.reply(`\`${target.user.tag}\`'s avatar: ${target.user.displayAvatarURL({ size: 1024, dynamic: true })}`);
+         interaction.reply(`\`${target.tag}\`'s avatar: ${target.displayAvatarURL({ size: 1024, dynamic: true })}`);
       }
    }
 }
