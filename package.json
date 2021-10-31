@@ -22,10 +22,9 @@
     "discord.js": "^13.3.0",
     "dotenv": "^10.0.0",
     "fs": "^0.0.1-security",
-    "node-fetch": "^3.0.0"
-  },
-  "devDependencies": {
+    "node-fetch": "^3.0.0",
     "@discordjs/rest": "^0.1.0-canary.0",
     "discord-api-types": "^0.24.0"
-  }
+  },
+  "devDependencies": {}
 }
