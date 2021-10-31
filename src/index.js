@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const chalk = require('chalk');
-const backend = require("./express");
+const backend = require("./backend.js");
 const CommandHandler = require('./handler/command.js');
 const commandHandler = new CommandHandler();
 const dotenv = require('dotenv');
