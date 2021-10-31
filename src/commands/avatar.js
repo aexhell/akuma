@@ -6,7 +6,7 @@ module.exports = {
    options: [
       {
          name: 'target',
-         type: 2,
+         type: 6,
          description: 'Select an user.',
          required: true
       }
