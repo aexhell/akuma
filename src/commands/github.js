@@ -28,11 +28,11 @@ module.exports = {
             .setColor('RANDOM')
             // add GitHub fields
             .addField(":id::", `\`${fetched.data.id}\`.`, true)
-            .addField('Followers', fetched.data.followers ? fetched.data.followers : 'None.', true)
-            .addField('Bio', fetched.data.bio ? fetched.data.bio : 'None.', true)
-            .addField('Location', fetched.data.location ? fetched.data.location : 'None.', true)
+            .addField('Followers', `${fetched.data.followers ? fetched.data.followers : 'None.'}`, true)
+            .addField('Bio', `${fetched.data.bio ? fetched.data.bio : 'None.'}`, true)
+            .addField('Location', `${fetched.data.location ? fetched.data.location : 'None.'}`, true)
             .addField('Joined at', `${fetched.data.created_at.substring(8,10)}/${fetched.data.created_at.substring(5,7)}/${fetched.data.created_at.substring(0,4)}`, true)
-            .addField('Repositories', fetched.data.public_repos ? `${fetched.data.public_repos} public ${fetched.data.public_repos === 1 ? 'repository' : 'repositories'}.` : 'None.', true)
+            .addField('Repositories', `${fetched.data.public_repos ? `${fetched.data.public_repos} public ${fetched.data.public_repos === 1 ? 'repository' : 'repositories'}.` : 'None.'}`, true)
 
          interaction.reply({
             embeds: [embed]
