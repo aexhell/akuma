@@ -1,4 +1,4 @@
-const _ = require("node-fetch");
+const fetch = require("node-fetch");
 
 module.exports = {
    name: 'github',
@@ -14,7 +14,7 @@ module.exports = {
    run: async (interaction) => {
       if (interaction) {
          let target = interaction.options.getString('target');
-         let fetched = await _(`https://api.github.com/users/${target}`);
+         let fetched = await fetch(`https://api.github.com/users/${target}`);
 
          console.log(fetched.body);
 
