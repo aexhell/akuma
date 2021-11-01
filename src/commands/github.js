@@ -1,3 +1,5 @@
+const { MessageEmbed } = require("discord.js");
+
 module.exports = {
    name: 'github',
    description: 'Get an user\'s GitHub',
@@ -18,51 +20,22 @@ module.exports = {
 
          console.log(fetched.data);
 
+         let embed = new MessageEmbed()
+            .setTitle(`${fetched.data.login}'s github`)
+            .setURL(fetched.data.html_url)
+            .setFooter('GitHub', "https://github.com/fluidicon.png")
+            .setThumbnail(fetched.data.avatar_url)
+            .setColor('RANDOM')
+            // add GitHub fields
+            .addField(":id::", `\`${fetched.data.id}\`.`, true)
+            .addField('Followers', fetched.data.followers ? fetched.data.followers : 'None.', true)
+            .addField('Bio', fetched.data.bio ? fetched.data.bio : 'None.', true)
+            .addField('Location', fetched.data.location ? fetched.data.location : 'None.', true)
+            .addField('Joined at', `${fetched.data.created_at.substring(8,10)}/${fetched.data.created_at.substring(5,7)}/${fetched.data.created_at.substring(0,4)}`, true)
+            .addField('Repositories', fetched.data.public_repos ? `${fetched.data.public_repos} public ${fetched.data.public_repos === 1 ? 'repository' : 'repositories'}.` : 'None.', true)
+
          interaction.reply({
-            embed: {
-               title: `${fetched.data.login}'s github`,
-               url: fetched.data.html_url,
-               fields: [
-                  {
-                     name: ":id::",
-                     value: `\`${fetched.data.id}\`.`,
-                     inline: true
-                  },
-                  {
-                     name: 'Followers',
-                     value: fetched.data.followers ? fetched.data.followers : 'None.',
-                     inline: true
-                  },
-                  {
-                     name: 'Bio',
-                     value: fetched.data.bio ? fetched.data.bio : 'None.',
-                     inline: true
-                  },
-                  {
-                     name: 'Location',
-                     value: fetched.data.location ? fetched.data.location : 'None.',
-                     inline: true
-                  },
-                  {
-                     name: 'Joined at',
-                     value: `${fetched.data.created_at.substring(8,10)}/${fetched.data.created_at.substring(5,7)}/${fetched.data.created_at.substring(0,4)}`,
-                     inline: true
-                  },
-                  {
-                     name: 'Repositories',
-                     value: fetched.data.public_repos ? `${fetched.data.public_repos} public ${fetched.data.public_repos === 1 ? 'repository' : 'repositories'}.` : 'None.',
-                     inline: true
-                  }
-               ],
-               thumbnail: {
-                  url: fetched.data.avatar_url
-               },
-               footer: {
-                  text: "Powered by GitHub",
-                  icon_url: "https://github.com/fluidicon.png"
-               },
-               color: 'RANDOM'
-            }
+            embeds: [embed]
          });
       }
    }
