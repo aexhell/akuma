@@ -22,7 +22,7 @@ module.exports = {
             embeds: [
                {
                   title: `${fetched.data.login}'s github`,
-                  url: fetched.data.url,
+                  url: fetched.data.html_url,
                   fields: [
                      {
                         name: ":id::",
