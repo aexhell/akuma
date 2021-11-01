@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+const { MessageEmbed } = require('discord.js');
 
 module.exports = {
    name: 'github',
@@ -18,12 +18,10 @@ module.exports = {
          let target = interaction.options.getString('target');
          let fetched = await axios(`https://api.github.com/users/${target}`);
 
-         console.log(fetched.data);
-
          let embed = new MessageEmbed()
             .setTitle(`${fetched.data.login}'s github`)
             .setURL(fetched.data.html_url)
-            .setFooter('GitHub', "https://github.com/fluidicon.png")
+            .setFooter('GitHub', 'https://github.com/fluidicon.png')
             .setThumbnail(fetched.data.avatar_url)
             .setColor('RANDOM')
             // add GitHub fields
