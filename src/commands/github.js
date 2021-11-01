@@ -10,18 +10,18 @@ module.exports = {
       }
    ],
    run: async (interaction) => {
-      const fetch = import("node-fetch");
+      const axios = require("axios");
 
       if (interaction) {
          let target = interaction.options.getString('target');
-         let fetched = await fetch(`https://api.github.com/users/${target}`);
+         let fetched = await axios(`https://api.github.com/users/${target}`);
 
-         console.log(fetched.body);
+         console.log(fetched.data);
 
          interaction.reply({
             embeds: [
                {
-                  title: `${fetched.body.login}'s github`,
+                  title: `${fetched.data.login}'s github`,
                   color: 'RANDOM'
                }
             ]
