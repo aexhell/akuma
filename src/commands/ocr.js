@@ -20,7 +20,7 @@ module.exports = {
             interaction.options.getString('url'),
             'eng',
             { logger: m => console.log(m) }
-          ).then(({ data: { text } }) => {
+          ).then(async ({ data: { text } }) => {
             console.log(text);
 
             let embed = new MessageEmbed()
