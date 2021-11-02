@@ -14,22 +14,25 @@ module.exports = {
    ],
    run: async (interaction) => {
       if (interaction) {
+         await interaction.deferReply();
+
          await Tesseract.recognize(
             interaction.options.getString('url'),
             'eng',
             { logger: m => console.log(m) }
           ).then(({ data: { text } }) => {
             console.log(text);
+
             let embed = new MessageEmbed()
                .setColor('RANDOM')
                .setAuthor(interaction.user.tag, interaction.user.displayAvatarURL())
                .setThumbnail(interaction.options.getString('url'))
                .setDescription(`\`\`\`${text}\`\`\``);
 
-            interaction.reply({
+            await interaction.editReply({
                embeds: [embed]
             });
-          })
+          });
       }
    }
 }
