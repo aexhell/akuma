@@ -14,8 +14,6 @@ module.exports = {
    ],
    run: async (interaction) => {
       if (interaction) {
-         interaction.channel.sendTyping();
-         
          Tesseract.recognize(
             interaction.options.getString('url'),
             'eng',
