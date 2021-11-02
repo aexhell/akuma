@@ -24,11 +24,7 @@ module.exports = {
                .setColor('RANDOM')
                .setAuthor(interaction.user.tag, interaction.user.displayAvatarURL())
                .setThumbnail(interaction.options.getString('url'))
-               .setDescription(`
-                  \`\`\`
-                  ${text}
-                  \`\`\`
-               `)
+               .setDescription(`\`\`\`${text}\`\`\``);
 
             interaction.reply({
                embeds: [embed]
