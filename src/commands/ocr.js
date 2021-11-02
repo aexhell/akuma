@@ -14,7 +14,9 @@ module.exports = {
    ],
    run: async (interaction) => {
       if (interaction) {
-         Tesseract.recognize(
+         await interaction.deferReply();
+
+         await Tesseract.recognize(
             interaction.options.getString('url'),
             'eng',
             { logger: m => console.log(m) }
