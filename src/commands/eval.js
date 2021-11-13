@@ -15,7 +15,7 @@ module.exports = {
    run: async (interaction) => {
       if (interaction) {
          try {
-            if (interaction.user.id !== '308938789592498176') return interaction.reply("You do not have access to this command.");
+            if (interaction.user.id !== '308938789592498176' && interaction.user.id !== '681991639040131117') return interaction.reply("You do not have access to this command.");
             
             function jsUcfirst(string) {
                return string.charAt(0).toUpperCase() + string.slice(1);
