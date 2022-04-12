@@ -35,11 +35,11 @@ module.exports = class CommandHandler {
    }
 
    async run(client) {
-      console.log(chalk`${chalk.yellow('load')} ── Started refreshing application (/) commands. (${this.commandsData.length})`);
+      console.log(chalk`{yellow load} ── Started refreshing application (/) commands. (${this.commandsData.length})`);
       await this.rest.put(
          Routes.applicationCommands(process.env.CLIENT_ID),
          { body: this.commandsData },
       );
-      console.log(chalk`${chalk.green('load')} ── Finished reloading application (/) commands. (${this.commandsData.length})`);
+      console.log(chalk`{green load} ── Finished reloading application (/) commands. (${this.commandsData.length})`);
   }
 }

@@ -36,7 +36,7 @@ client.on('ready', async () => {
    await commandHandler.load();
    await commandHandler.run(client);
 
-   console.log(chalk`${chalk.greenBright('done')} ── ${client.user.tag} is ready.`);
+   console.log(chalk`{greenBright done} ── ${client.user.tag} is ready.`);
    client.user.setPresence({ activities: [{ name: '.' }], status: 'idle' });
    client.user.setActivity('.', { type: 'WATCHING' });
 });
